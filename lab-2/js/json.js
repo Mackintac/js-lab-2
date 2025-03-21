@@ -7,8 +7,7 @@ const section = document.querySelector('section');
 async function populate() {
   // Introducing JavaScript Object Notation (JSON): https://json.org/
   // STEP 4: Store the URL of a JSON file in a variable */
-  const requestURL =
-    'https://smccrindle.github.io/comp1073lesson10/js/i-scream.json';
+  const requestURL = 'js/i-scream.json';
   // STEP 5: Use the new URL to create a new request object
   const request = new Request(requestURL);
   // STEP 6: Make a network request with the fetch() function, which returns a Response object
@@ -39,11 +38,17 @@ function populateHeader(jsonObj) {
 function showTopFlavors(jsonObj) {
   // STEP 10c: Attache the JSON topFlavors object to a variable
   let topFlavors = jsonObj.topFlavors;
+
+  console.log(topFlavors);
+
   // STEP 10d: Loop through the topFlavors object
   for (let i = 0; i < topFlavors.length; i++) {
     // STEP 10e: build HTML elements for the content
     let article = document.createElement('article');
     let h2 = document.createElement('h2');
+    let h3 = document.createElement('h3');
+    let h4 = document.createElement('h4');
+
     let img = document.createElement('img');
     let ul = document.createElement('ul');
 
@@ -58,8 +63,20 @@ function showTopFlavors(jsonObj) {
       // add the ingredient to the UL
       ul.appendChild(listItem);
     }
+
+    // h3 representing the calories
+    let calories = topFlavors[i]['calories'];
+    h3.textContent = `calories: ${calories} *we are under-representing this`;
+
+    // h4 representing the type
+    let iceCreamType = topFlavors[i]['type'];
+    h4.textContent = `The type of dessert *that we say* this is: ${iceCreamType}`;
+
     // STEP 10h: Append each of the above HTML elements to the ARTICLE element
     article.appendChild(h2);
+    article.appendChild(h3);
+    article.appendChild(h4);
+
     article.appendChild(img);
     article.appendChild(ul);
     // STEP 10i: Append each complete ARTICLE element to the SECTION element

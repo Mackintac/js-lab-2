@@ -28,6 +28,31 @@
       "type": "ice cream",
       "ingredients": ["real cream", "heavy caramel", "cane sugar", "sea salt"],
       "image": "strawberry-sprinkle.svg"
+    },
+    {
+      "name": "Bad Birthday Cake ",
+      "calories": 1900,
+      "type": "ice cream",
+      "ingredients": [
+        "real cream",
+        "heavy lemon",
+        "something bad",
+        "sugar sprinkles",
+        "lemon dip"
+      ],
+      "image": "ice-cream-xtra1.svg"
+    },
+    {
+      "name": "Rocky Road",
+      "calories": 1000,
+      "type": "ice cream",
+      "ingredients": [
+        "real cream",
+        "Choco chips",
+        "cane sugar",
+        "marshmallows"
+      ],
+      "image": "ice-cream-xtra2.svg"
     }
   ]
 }
